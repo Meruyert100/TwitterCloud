@@ -25,7 +25,7 @@ SECRET_KEY = 'ykzpddezr5d1)+$8ouykiyqb_7hmu6r&9=xrxoapodmj70ia_('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME'], '127.0.0.1', 'localhost', 'bekapphw10.azurewebsites.net'] if 'WEBSITE_HOSTNAME' in os.environ else []
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME'], '127.0.0.1', 'localhost', 'tweetmerweb.azurewebsites.net'] if 'WEBSITE_HOSTNAME' in os.environ else []
 
 
 # Application definition
