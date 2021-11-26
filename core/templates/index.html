@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tweet something... by Meruyert</title>
+    </head>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input, textarea{
+            margin-top: 50px;
+        }
+        textarea{
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        async function post() {
+            let title = document.getElementById('title').value;
+            let body = document.getElementById('body').value;
+            let data = {
+                "title": title,
+                "body": body
+            }
+            alert(data)
+            alert(JSON.stringify(data))
+            try {
+                const response = await fetch("https://merapim.azure-api.net/manual/paths/invoke", {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Ocp-Apim-Subscription-Key': '375f41e8bb1d469c8a2ee76783d1da52',
+                        'Connection': 'keep-alive',
+                        'Ocp-Apim-Trace': 'true'
+                    }
+                });
+                const json = await response.json();
+                console.log('Успех:', JSON.stringify(json));
+            } catch (error) {
+                console.error('Ошибка:', error);
+            }
+        }
+    </script>
+    <body>
+        <header>
+            <h1>Tweet something... by Meruyert</h1>
+        </header>
+        <form action="/" method="POST" >
+            <input id="title" type="text" name="title" placeholder="Title">
+            <textarea id="body" name="body" placeholder="Body"></textarea>
+            <input type="submit" value="Post">
+        </form>
+{#        {{ details}}#}
+    </body>
+</html>
