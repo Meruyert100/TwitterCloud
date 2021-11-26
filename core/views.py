@@ -22,7 +22,7 @@ def index(request):
             "title": output,
             "body": request.POST['body']
         }
-        response = requests.post('https://merapim.azure-api.net/', json=data)
+        response = requests.post('https://tweetapimmer.azure-api.net', json=data)
         context['status'] = response.status_code
         return render(request, template_name='index.html', context=context)
     return render(request, template_name='index.html', context=context)

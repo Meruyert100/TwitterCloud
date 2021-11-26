@@ -30,12 +30,12 @@
             alert(data)
             alert(JSON.stringify(data))
             try {
-                const response = await fetch("https://merapim.azure-api.net/manual/paths/invoke", {
+                const response = await fetch("https://tweetapimmer.azure-api.net", {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
                         'Content-Type': 'application/json',
-                        'Ocp-Apim-Subscription-Key': '375f41e8bb1d469c8a2ee76783d1da52',
+                        'Ocp-Apim-Subscription-Key': '394657023f8c4fd28c4173a7d60fb821',
                         'Connection': 'keep-alive',
                         'Ocp-Apim-Trace': 'true'
                     }
@@ -56,6 +56,5 @@
             <textarea id="body" name="body" placeholder="Body"></textarea>
             <input type="submit" value="Post">
         </form>
-{#        {{ details}}#}
     </body>
 </html>
