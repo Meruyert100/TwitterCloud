@@ -30,7 +30,7 @@
             alert(data)
             alert(JSON.stringify(data))
             try {
-                const response = await fetch("https://tweetapimmer.azure-api.net", {
+                const response = await fetch("https://tweetapimmer.azure-api.net/post/manual/paths/invoke", {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
